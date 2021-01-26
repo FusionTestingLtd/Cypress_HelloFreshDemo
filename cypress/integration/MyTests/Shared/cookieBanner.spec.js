@@ -2,6 +2,13 @@
 /// <reference types="cypress" />
 
 describe("Cookie Banner Test Suite", function () {
+  before(function () {
+    cy.visit("/");
+    cy.get("#cookiesDisclaimer").then(function (cookieBanner) {
+      this.cookieBanner = cookieBanner;
+    });
+  });
+
   beforeEach(function () {
     cy.fixture("cookieBannerData").then(function (data) {
       this.data = data;
@@ -9,13 +16,10 @@ describe("Cookie Banner Test Suite", function () {
   });
 
   it("Cookie banner is visible", function () {
-    cy.visit("https://www.hellofresh.co.uk/?locale=en-GB");
-
-    cy.get("#cookiesDisclaimer").should("be.visible");
+    cy.wrap(this.cookieBanner).should("be.visible");
   });
 
   it("GOT IT button visibility & text", function () {
-
     cy.get('button[type="button"].js-cookie-disclaimer-close')
       .should("be.visible")
       .and("contain", this.data.closeBtnText);
@@ -23,22 +27,19 @@ describe("Cookie Banner Test Suite", function () {
 
   it("Cookie Disclaimer text", function () {
     cy.get("#cookiesDisclaimer")
-      .find(".container")
-      .find("p")
+      .find(".container p")
       .should("contain", this.data.disclaimerText);
   });
 
   it("Protection Declaration exists, url and text", function () {
     cy.get("#cookiesDisclaimer")
-      .find(".container")
-      .find("p")
-      .find("a")
+      .find(".container p a")
       .should("have.attr", "href", this.data.termsAndConditionsURL)
       .and("contain", this.data.termsAndConditionsText);
   });
 
   it("closing the cookie banner", function () {
     cy.get("button.js-cookie-disclaimer-close").click();
-    cy.get("#cookiesDisclaimer").should("not.exist");
+    cy.wrap(this.cookieBanner).should("not.exist");
   });
 });

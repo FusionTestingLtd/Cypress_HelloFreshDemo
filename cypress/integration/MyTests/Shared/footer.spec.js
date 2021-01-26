@@ -35,47 +35,33 @@ describe("Footer Test Suite", function () {
     cy.contains(this.data.termsAndConditionsText)
       .parents("div.fela-6avdm3")
       .find('div[class="fela-2juahm fela-11qchyo"]')
-      .find("a")
-      .contains(this.data.termsAndConditionsText)
-      .should("have.attr", "href", this.data.termsAndConditionsURL)
-      .parent("div")
-      .find("a")
-      .contains(this.data.privacyText)
-      .should("have.attr", "href", this.data.privacyURL)
-      .parent("div")
-      .find("a")
-      .contains(this.data.slaveryText)
-      .should("have.attr", "href", this.data.slaveryURL);
+      .within(function () {
+        cy.get("a")
+          .eq(0)
+          .should("have.text", this.data.termsAndConditionsText)
+          .and("have.attr", "href", this.data.termsAndConditionsURL);
+        cy.get("a")
+          .eq(1)
+          .should("have.text", this.data.privacyText)
+          .and("have.attr", "href", this.data.privacyURL);
+        cy.get("a")
+          .eq(2)
+          .should("have.text", this.data.slaveryText)
+          .and("have.attr", "href", this.data.slaveryURL);
+      });
   });
 
   it("Social Media links", function () {
-    cy.get('div[class="fela-15qrj6g fela-sh1jxl"]')
-      .find("a")
-      .should("have.attr", "href", this.data.facebookURL)
-      .find("title#a11y-Facebook-desktop-id")
-      .should("have.text", this.data.facebookTitleText)
-      .parent("svg")
-      .find("desc")
-      .should("have.text", this.data.facebookDescText)
-      .parents("div.fela-1v91mpw")
-      .find("a")
-      .siblings()
-      .next()
-      .should("have.attr", "href", this.data.twitterURL)
-      .find("title#a11y-Twitter-desktop-id")
-      .should("have.text", this.data.twiterTitleText)
-      .parent("svg")
-      .find("desc")
-      .should("have.text", this.data.twiterText)
-      .parents("div.fela-1v91mpw")
-      .find("a")
-      .siblings()
-      .last()
-      .should("have.attr", "href", this.data.instaURL)
-      .find("title#a11y-Instagram-desktop-id")
-      .should("have.text", this.data.instaTitleText)
-      .parent("svg")
-      .find("desc")
-      .should("have.text", this.data.instaText);
+    cy.get('div[class="fela-15qrj6g fela-sh1jxl"]').within(function () {
+      cy.get("a").eq(0).should("have.attr", "href", this.data.facebookURL);
+      cy.get("title").eq(0).should("have.text", this.data.facebookTitleText);
+      cy.get("desc").eq(0).should("have.text", this.data.facebookDescText);
+      cy.get("a").eq(1).should("have.attr", "href", this.data.twitterURL);
+      cy.get("title").eq(1).should("have.text", this.data.twiterTitleText);
+      cy.get("desc").eq(1).should("have.text", this.data.twiterText);
+      cy.get("a").eq(2).should("have.attr", "href", this.data.instaURL);
+      cy.get("title").eq(2).should("have.text", this.data.instaTitleText);
+      cy.get("desc").eq(2).should("have.text", this.data.instaText);
+    });
   });
 });

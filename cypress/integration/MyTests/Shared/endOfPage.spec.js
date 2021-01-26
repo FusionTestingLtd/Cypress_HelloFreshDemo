@@ -3,7 +3,7 @@
 
 describe("End of Page Test Suite", function () {
   before(function () {
-    cy.visit("https://www.hellofresh.co.uk/");
+    cy.visit("/");
     //scrolling too fast prevents the footer section being displayed.
     //scroll once to the bottom over time, which triggers the footer to be loaded
     //scroll to the bottom again to get the true page bottom.
@@ -27,44 +27,22 @@ describe("End of Page Test Suite", function () {
     cy.get("div.fela-t9jntg")
       .contains(this.data.helloFreshHeading)
       .parent("div")
-      .find("div.fela-15qrj6g")
-      .find("ul.fela-9yxtmw")
+      .find("div.fela-15qrj6g ul.fela-9yxtmw")
       .within(function () {
-        cy.get("li")
-          .eq(0)
-          .should("have.text", this.data.giftCardText)
-          .find("a")
-          .should("have.attr", "href", this.data.giftCardURL);
-
-        cy.get("li")
-          .eq(1)
-          .should("have.text", this.data.uniDaysText)
-          .find("a")
-          .should("have.attr", "href", this.data.uniDaysURL);
-
-        cy.get("li")
+        cy.get("li").eq(0).should("have.text", this.data.giftCardText);
+        cy.get("a").eq(0).should("have.attr", "href", this.data.giftCardURL);
+        cy.get("li").eq(1).should("have.text", this.data.uniDaysText);
+        cy.get("a").eq(1).should("have.attr", "href", this.data.uniDaysURL);
+        cy.get("li").eq(2).should("have.text", this.data.studentBeansText);
+        cy.get("a")
           .eq(2)
-          .should("have.text", this.data.studentBeansText)
-          .find("a")
           .should("have.attr", "href", this.data.studentBeansURL);
-
-        cy.get("li")
-          .eq(3)
-          .should("have.text", this.data.recipesText)
-          .find("a")
-          .should("have.attr", "href", this.data.recipesURL);
-
-        cy.get("li")
-          .eq(4)
-          .should("have.text", this.data.blogText)
-          .find("a")
-          .should("have.attr", "href", this.data.blogURL);
-
-        cy.get("li")
-          .eq(5)
-          .should("have.text", this.data.affiliateText)
-          .find("a")
-          .should("have.attr", "href", this.data.affiliateURL);
+        cy.get("li").eq(3).should("have.text", this.data.recipesText);
+        cy.get("a").eq(3).should("have.attr", "href", this.data.recipesURL);
+        cy.get("li").eq(4).should("have.text", this.data.blogText);
+        cy.get("a").eq(4).should("have.attr", "href", this.data.blogURL);
+        cy.get("li").eq(5).should("have.text", this.data.affiliateText);
+        cy.get("a").eq(5).should("have.attr", "href", this.data.affiliateURL);
       });
   });
 
@@ -74,33 +52,18 @@ describe("End of Page Test Suite", function () {
       .contains(this.data.ourCompanyHeading)
       .parents("div.fela-t9jntg")
       .find("ul")
-
       .within(function () {
-        cy.get("li")
+        cy.get("li").eq(0).should("have.text", this.data.helloFreshGroupText);
+        cy.get("a")
           .eq(0)
-          .should("have.text", this.data.helloFreshGroupText)
-          .find("a")
           .should("have.attr", "href", this.data.helloFreshGroupURL);
-
-        cy.get("li")
-          .eq(1)
-          .should("contain", this.data.careersText)
-          .find("a")
-          .should("have.attr", "href", this.data.careersURL)
-          .find("span")
-          .should("contain", this.data.hiringIndicatorText);
-
-        cy.get("li")
-          .eq(2)
-          .should("have.text", this.data.pressText)
-          .find("a")
-          .should("have.attr", "href", this.data.pressURL);
-
-        cy.get("li")
-          .eq(3)
-          .should("have.text", this.data.newLookText)
-          .find("a")
-          .should("have.attr", "href", this.data.newLookURL);
+        cy.get("li").eq(1).should("contain", this.data.careersText);
+        cy.get("a").eq(1).should("have.attr", "href", this.data.careersURL);
+        cy.get("span").eq(0).should("contain", this.data.hiringIndicatorText);
+        cy.get("li").eq(2).should("have.text", this.data.pressText);
+        cy.get("a").eq(2).should("have.attr", "href", this.data.pressURL);
+        cy.get("li").eq(3).should("have.text", this.data.newLookText);
+        cy.get("a").eq(3).should("have.attr", "href", this.data.newLookURL);
       });
   });
 
@@ -108,21 +71,12 @@ describe("End of Page Test Suite", function () {
     cy.get("div.fela-t9jntg")
       .contains(this.data.helpHeading)
       .parents("div.fela-t9jntg")
-      .find("div.fela-15qrj6g")
-      .find("ul.fela-9yxtmw")
-
+      .find("div.fela-15qrj6g ul.fela-9yxtmw")
       .within(function () {
-        cy.get("li")
-          .eq(0)
-          .should("have.text", this.data.findAnswerText)
-          .find("a")
-          .should("have.attr", "href", this.data.findAnswerURL);
-
-        cy.get("li")
-          .eq(1)
-          .should("contain", this.data.helpCentreText)
-          .find("a")
-          .should("have.attr", "href", this.data.helpCentreURL);
+        cy.get("li").eq(0).should("have.text", this.data.findAnswerText);
+        cy.get("a").eq(0).should("have.attr", "href", this.data.findAnswerURL);
+        cy.get("li").eq(1).should("contain", this.data.helpCentreText);
+        cy.get("a").eq(1).should("have.attr", "href", this.data.helpCentreURL);
       });
   });
 
@@ -131,24 +85,27 @@ describe("End of Page Test Suite", function () {
       .find("div#app-download-title-desktop")
       .should("contain", this.data.downloadAppHeading)
       .parents("div.fela-1v2ee6e")
-      .find("p")
-      .should("contain", this.data.downloadAppText)
-      .parents("div.fela-1v2ee6e")
-      .find("ul")
       .within(function () {
-        cy.get("li")
+        cy.get("p").eq(0).should("contain", this.data.downloadAppText);
+        cy.get("ul")
           .eq(0)
-          .find("a")
-          .should("have.attr", "href", this.data.appStoreURL)
-          .find("img")
-          .should("have.attr", "alt", this.data.appStoreALT);
+          .within(function () {
+            cy.get("li").eq(0);
+            cy.get("a")
+              .eq(0)
+              .should("have.attr", "href", this.data.appStoreURL);
+            cy.get("img")
+              .eq(0)
+              .should("have.attr", "alt", this.data.appStoreALT);
 
-        cy.get("li")
-          .eq(1)
-          .find("a")
-          .should("have.attr", "href", this.data.googlePlayURL)
-          .find("img")
-          .should("have.attr", "alt", this.data.googlePlayALT);
+            cy.get("li").eq(1);
+            cy.get("a")
+              .eq(1)
+              .should("have.attr", "href", this.data.googlePlayURL);
+            cy.get("img")
+              .eq(1)
+              .should("have.attr", "alt", this.data.googlePlayALT);
+          });
       });
   });
 });
