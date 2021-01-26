@@ -1,0 +1,7 @@
+
+{
+    "baseUrl": "https://www.hellofresh.co.uk/",
+    "ignoreTestFiles": "**/examples/*",
+    "viewportHeight": 1080,
+    "viewportWidth": 1920
+    }

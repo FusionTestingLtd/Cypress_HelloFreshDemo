@@ -1,0 +1,29 @@
+
+
+{
+
+    "copyRightText":"©HelloFresh2021",
+
+    "termsAndConditionsText":"Terms and Conditions",
+    "termsAndConditionsURL":"/about/termsandconditions/",
+
+    "privacyText":"Privacy",
+    "privacyURL":"/about/privacy/",
+
+    "slaveryText":"Modern Slavery Statement",
+    "slaveryURL":"/about/modern-slavery-act-statement/",
+
+
+    "facebookURL":"http://www.facebook.com/HelloFreshUK",
+    "facebookTitleText":"Facebook-desktop",
+    "facebookDescText":"Facebook icon",
+
+    "twitterURL":"https://twitter.com/HelloFreshUK",
+    "twiterTitleText":"Twitter-desktop",
+    "twiterText":"Twitter icon",
+
+
+    "instaURL":"http://instagram.com/hellofreshuk",
+    "instaTitleText":"Instagram-desktop",
+    "instaText":"Instagram outline icon"
+}

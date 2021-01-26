@@ -1,0 +1,51 @@
+
+
+{
+
+    "giftCardURL":"/gift/",
+    "uniDaysURL":"/landing/students",
+    "studentBeansURL":"https://hello-fresh.connect.studentbeans.com/uk",
+    "recipesURL":"/recipes/",
+    "blogURL":"https://blog.hellofresh.co.uk",
+    "affiliateURL":"/about/affiliates/",
+
+
+    "helloFreshGroupURL":"http://www.hellofreshgroup.com/",
+    "careersURL":"/careers/",
+    "pressURL":"/about/press/",
+    "newLookURL":"/about/new-look",
+
+    "findAnswerURL":"/contact/",
+    "helpCentreURL":"/about/faq",
+
+    "giftCardText":"Gift cards",
+    "uniDaysText":"Unidays",
+    "studentBeansText":"Student Beans",
+    "recipesText":"Recipes",
+    "blogText":"Blog",
+    "affiliateText":"Affiliate",
+
+
+    "helloFreshGroupText":"HelloFresh Group",
+    "careersText":"Careers",
+    "hiringIndicatorText":"We're hiring!",
+    "pressText":"Press",
+    "newLookText":"New Look",
+
+
+    "findAnswerText":"Find an answer",
+    "helpCentreText":"Help Centre",
+
+    "helloFreshHeading":"HelloFresh",
+    "ourCompanyHeading":"Our company",
+    "helpHeading":"Help",
+
+    "downloadAppHeading":"DOWNLOAD OUR APP",
+    "downloadAppText":"Manage your deliveries from anywhere, anytime.",
+    
+    "appStoreURL":"https://app.adjust.com/7bdjd1g",
+    "googlePlayURL":"https://app.adjust.com/qfxjg4i",
+
+    "googlePlayALT":"google-play-badge",
+    "appStoreALT":"apple-store-badge"
+}
