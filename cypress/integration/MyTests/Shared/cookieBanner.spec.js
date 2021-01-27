@@ -26,16 +26,17 @@ describe("Cookie Banner Test Suite", function () {
   });
 
   it("Cookie Disclaimer text", function () {
-    cy.get("#cookiesDisclaimer")
-      .find(".container p")
-      .should("contain", this.data.disclaimerText);
+    cy.wrap(this.cookieBanner).then(function () {
+      cy.get(".container p").should("contain", this.data.disclaimerText);
+    });
   });
 
   it("Protection Declaration exists, url and text", function () {
-    cy.get("#cookiesDisclaimer")
-      .find(".container p a")
-      .should("have.attr", "href", this.data.termsAndConditionsURL)
-      .and("contain", this.data.termsAndConditionsText);
+    cy.wrap(this.cookieBanner).then(function () {
+      cy.get(".container p a")
+        .should("have.attr", "href", this.data.termsAndConditionsURL)
+        .and("contain", this.data.termsAndConditionsText);
+    });
   });
 
   it("closing the cookie banner", function () {
