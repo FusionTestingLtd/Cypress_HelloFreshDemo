@@ -2,13 +2,35 @@
 
 {
 
-    "stayUpdatedTitle":"Stay updated",
+    "brandLogoAlt":"HelloFresh",
+    "brandLogoUrl":"/?locale=en-GB",
 
-    "stayUpdatedHeading":"Keep up to date with delicious recipes, offers, and news",
+    "recipieBoxText":"Our Recipe Boxes",
+    "recipieBoxUrl":"/plans",
 
-    "stayUpdatedTextBoxDefaultText":"Enter email address",
+    "HowItWorksHeadingTitleText":"How It Works",
+    "HowItWorksHeadingLinkText":"How It Works",
+    "HowItWorksHeadingUrl":"/how-it-works/",
 
-    "stayUpdatedPlaceholder":"Enter email address",
+    "SustainabilityText":"Sustainability",
+    "SustainabilityUrl":"/about/sustainability",
 
-    "stayUpdatedSubscribeBtnText":"Subscribe"
+    "C02NeutralText":"C02 Neutral",
+    "C02NeutralUrl":"/about/carbon-neutral",
+
+    "OurRecipesTitleText":"Our Recipes",
+    "menuLinkText":"On The Menu",
+    "menuUrl":"/menus/",
+    "recipieLinkText":"Recipe Hub",
+    "recipieUrl":"/recipes/",
+
+    "COVIDUrl":"/about/covid-19-updates",
+    "COVIDText":"COVID-19 Updates",
+
+    "GiftCardsUrl":"/gift",
+    "GiftCardsText":"Gift Cards",
+
+    "LoginUrl":"/login",
+    "LoginText":"LOG IN"
+
 }
