@@ -1,0 +1,16 @@
+{
+
+
+    "backgroundImage":"url(\"https://img.hellofresh.com/f_auto,fl_lossy,q_auto/hellofresh_website/gb/cms/homepage/HF_App_web_landing_page_newbanners_desktop_2560x700.jpg\")",
+
+    "h1Text":"We save you serious ",
+    "heroSectionText":"Now with more choices every week and meals starting from just £3.25/pp",
+
+    "viewBoxesUrl":"/plans?locale=en-GB",
+    "viewBoxesText":"View Our Boxes",
+    "backgrounColor":"rgb(71, 107, 45)",
+    "borderColor":"rgb(71, 107, 45)",
+    "btnTextColor":"rgb(255, 255, 255)"
+
+
+}
